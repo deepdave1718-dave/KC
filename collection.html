@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Collection - Kalamayi Crafts</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#121212">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  
+  <div class="header-wrapper">
+    <nav class="navbar">
+      <a href="index.html" class="brand-logo">
+        Kalamayi Crafts <span class="dot"></span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link ">Home</a></li>
+        <li><a href="collection.html" class="nav-link active">Collection</a></li>
+        <li><a href="shop.html" class="nav-link ">Shop</a></li>
+        <li><a href="about.html" class="nav-link ">About</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="shop.html" class="action-icon-btn" title="Search">
+          <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </a>
+        <a href="favourite.html" class="action-icon-btn" title="Wishlist">
+          <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge-count fav-badge-count">0</span>
+        </a>
+        <button class="action-icon-btn" onclick="openDrawer('cartDrawer')" title="Shopping Cart">
+          <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="badge-count cart-badge-count">0</span>
+        </button>
+        <a href="account.html" class="user-pill">
+          <span class="avatar-circle">F</span>
+          <span>Friend</span>
+        </a>
+        <a href="become-creator.html" class="btn-pill-dark">
+          Become a Creator ↗
+        </a>
+      </div>
+    </nav>
+  </div>
+
+
+  <main class="container">
+    <div style="margin: 30px 0 20px;">
+      <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">Home / Collection</div>
+      <h1 class="serif display-title">THE<br><span style="color:#D06F3D;">COLLECTION</span></h1>
+      <p style="color: var(--text-muted); max-width: 500px; margin-top: 8px;">Every piece handcrafted. Every maker independent.</p>
+    </div>
+
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: 30px 0 20px; padding: 12px 20px; background: #fff; border: 1px solid var(--border-light); border-radius: 9999px;">
+      <div class="category-filter-strip" style="padding: 0; margin: 0;">
+        <span class="cat-pill active">All</span>
+        <span class="cat-pill">Crochet</span>
+        <span class="cat-pill">Jewellery</span>
+        <span class="cat-pill">Bags</span>
+        <span class="cat-pill">Home Décor</span>
+        <span class="cat-pill">Gifts</span>
+        <span class="cat-pill">Art</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 0.82rem; color: #777;">12 Items</span>
+        <select style="background: transparent; font-size: 0.82rem; font-weight: 600; cursor: pointer;">
+          <option>Sort: Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest First</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge badge-bestseller">BESTSELLER</span>
+          <button class="fav-btn" onclick="toggleWishlist({id:'c1', name:'Crochet Flower Bouquet', price:899, img:'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=600&q=80'}, this)">♥</button>
+          <a href="product.html"><img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=600&q=80"></a>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="product.html">Crochet Flower Bouquet</a></h3>
+          <p class="product-maker">Isha Creation · Bhavnagar, Gujarat</p>
+          <div class="product-price-row">
+            <span class="product-price">₹899</span>
+            <button onclick="addToCart({id:'c1', name:'Crochet Flower Bouquet', price:899, img:'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=600&q=80'})" class="btn btn-pill-dark" style="padding: 6px 14px; font-size: 0.75rem;">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge badge-new">NEW</span>
+          <button class="fav-btn" onclick="toggleWishlist({id:'c2', name:'Embroidered Handbag', price:1299, img:'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80'}, this)">♥</button>
+          <a href="product.html"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"></a>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="product.html">Embroidered Handbag</a></h3>
+          <p class="product-maker">Meera Arts · Jaipur, Rajasthan</p>
+          <div class="product-price-row">
+            <span class="product-price">₹1,299</span>
+            <button onclick="addToCart({id:'c2', name:'Embroidered Handbag', price:1299, img:'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80'})" class="btn btn-pill-dark" style="padding: 6px 14px; font-size: 0.75rem;">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <button class="fav-btn" onclick="toggleWishlist({id:'c3', name:'Handmade Silver Ring', price:649, img:'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'}, this)">♥</button>
+          <a href="product.html"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80"></a>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="product.html">Handmade Silver Ring</a></h3>
+          <p class="product-maker">Anvi Studio · Mumbai, Maharashtra</p>
+          <div class="product-price-row">
+            <span class="product-price">₹649</span>
+            <button onclick="addToCart({id:'c3', name:'Handmade Silver Ring', price:649, img:'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'})" class="btn btn-pill-dark" style="padding: 6px 14px; font-size: 0.75rem;">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge badge-popular">POPULAR</span>
+          <button class="fav-btn" onclick="toggleWishlist({id:'c4', name:'Wool Knit Throw', price:1899, img:'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80'}, this)">♥</button>
+          <a href="product.html"><img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80"></a>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="product.html">Wool Knit Throw Blanket</a></h3>
+          <p class="product-maker">Tanaphong Studio · Surat</p>
+          <div class="product-price-row">
+            <span class="product-price">₹1,899</span>
+            <button onclick="addToCart({id:'c4', name:'Wool Knit Throw', price:1899, img:'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80'})" class="btn btn-pill-dark" style="padding: 6px 14px; font-size: 0.75rem;">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <button class="fav-btn" onclick="toggleWishlist({id:'c5', name:'Gift Hamper Box', price:449, img:'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80'}, this)">♥</button>
+          <a href="product.html"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80"></a>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="product.html">Gift Hamper Box</a></h3>
+          <p class="product-maker">Wrap & Craft · Delhi, NCR</p>
+          <div class="product-price-row">
+            <span class="product-price">₹449</span>
+            <button onclick="addToCart({id:'c5', name:'Gift Hamper Box', price:449, img:'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80'})" class="btn btn-pill-dark" style="padding: 6px 14px; font-size: 0.75rem;">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <span class="product-badge badge-bestseller">BESTSELLER</span>
+          <button class="fav-btn" onclick="toggleWishlist({id:'c6', name:'Clay Pottery Vase', price:799, img:'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80'}, this)">♥</button>
+          <a href="product.html"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80"></a>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="product.html">Clay Pottery Vase</a></h3>
+          <p class="product-maker">Earth Forms · Ahmedabad</p>
+          <div class="product-price-row">
+            <span class="product-price">₹799</span>
+            <button onclick="addToCart({id:'c6', name:'Clay Pottery Vase', price:799, img:'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80'})" class="btn btn-pill-dark" style="padding: 6px 14px; font-size: 0.75rem;">+ Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #141312; color: #fff; border-radius: var(--card-radius); padding: 48px; margin: 60px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+      <div>
+        <h2 class="serif" style="font-size: 2.2rem; margin-bottom: 8px;">Can't find what you're<br>looking for?</h2>
+        <p style="color: #B3ADA5;">Browse creators and commission something custom made just for you.</p>
+      </div>
+      <a href="become-creator.html" class="btn btn-outline-white" style="background:#fff; color:#121212;">Browse Creators ↗</a>
+    </div>
+  </main>
+
+  
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="serif">Kalamayi Crafts <span style="color:#D06F3D;">•</span></h3>
+          <p>A marketplace built for the people behind handmade. Authentic creations direct from India's master artisans.</p>
+          <div style="display: flex; gap: 14px; font-size: 0.9rem; color: #9E988F;">
+            <a href="#">Instagram</a> · <a href="#">Pinterest</a> · <a href="#">YouTube</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">Explore All</a></li>
+            <li><a href="collection.html">Categories</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+            <li><a href="collection.html">Curated Collections</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Creators</h4>
+          <ul>
+            <li><a href="become-creator.html">Become a Creator</a></li>
+            <li><a href="about.html">Creator Stories</a></li>
+            <li><a href="become-creator.html">How Selling Works</a></li>
+            <li><a href="become-creator.html">Creator Handbook</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="about.html">Contact Us</a></li>
+            <li><a href="become-creator.html">FAQs</a></li>
+            <li><a href="checkout.html">Shipping & Returns</a></li>
+            <li><a href="account.html">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Kalamayi</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>© 2026 Kalamayi Crafts. All rights reserved.</div>
+        <div>Made with care · India</div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="pwa-bottom-bar">
+    <a href="index.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="collection.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Collection</span>
+    </a>
+    <a href="shop.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span>Shop</span>
+    </a>
+    <a href="favourite.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <span>Saved</span>
+    </a>
+    <a href="account.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Account</span>
+    </a>
+  </nav>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  
+  <div class="side-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3 class="serif">Your Cart</h3>
+      <button class="drawer-close-btn" onclick="closeAllDrawers()">✕</button>
+    </div>
+    <div class="drawer-body" id="cartDrawerItems"></div>
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 16px;">
+        <span>Subtotal</span>
+        <span id="cartDrawerSubtotal">₹0</span>
+      </div>
+      <a href="checkout.html" class="btn btn-accent" style="width: 100%;">Proceed to Checkout →</a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

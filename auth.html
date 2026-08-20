@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up - Kalamayi Crafts</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#121212">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  
+  <div class="header-wrapper">
+    <nav class="navbar">
+      <a href="index.html" class="brand-logo">
+        Kalamayi Crafts <span class="dot"></span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link ">Home</a></li>
+        <li><a href="collection.html" class="nav-link ">Collection</a></li>
+        <li><a href="shop.html" class="nav-link ">Shop</a></li>
+        <li><a href="about.html" class="nav-link ">About</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="shop.html" class="action-icon-btn" title="Search">
+          <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </a>
+        <a href="favourite.html" class="action-icon-btn" title="Wishlist">
+          <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge-count fav-badge-count">0</span>
+        </a>
+        <button class="action-icon-btn" onclick="openDrawer('cartDrawer')" title="Shopping Cart">
+          <svg width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="badge-count cart-badge-count">0</span>
+        </button>
+        <a href="account.html" class="user-pill">
+          <span class="avatar-circle">F</span>
+          <span>Friend</span>
+        </a>
+        <a href="become-creator.html" class="btn-pill-dark">
+          Become a Creator ↗
+        </a>
+      </div>
+    </nav>
+  </div>
+
+
+  <main class="container" style="margin: 40px auto 80px; max-width: 500px;">
+    <div style="background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--card-radius); padding: 40px 32px; box-shadow: var(--shadow-sm);">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <span class="tag-badge">WELCOME TO KALAMAYI</span>
+        <h1 class="serif" style="font-size: 2.2rem; margin: 8px 0;">Sign In to Continue</h1>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">Track orders, save favourites and support handmade artists.</p>
+      </div>
+
+      <button class="btn btn-outline" style="width: 100%; padding: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px;" onclick="window.location.href='account.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/></svg>
+        Continue with Google
+      </button>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+        <div style="flex: 1; height: 1px; background: #eee;"></div>
+        <span style="font-size: 0.75rem; color: #999; text-transform: uppercase;">or with email</span>
+        <div style="flex: 1; height: 1px; background: #eee;"></div>
+      </div>
+
+      <form onsubmit="event.preventDefault(); window.location.href='account.html';">
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: #555;">Email Address</label>
+          <input type="email" value="friend@kalamayi.in" required style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-light); border-radius: 8px;">
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; color: #555;">Password</label>
+          <input type="password" value="••••••••" required style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-light); border-radius: 8px;">
+        </div>
+
+        <button type="submit" class="btn btn-accent" style="width: 100%; padding: 14px;">Sign In →</button>
+      </form>
+    </div>
+  </main>
+
+  
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="serif">Kalamayi Crafts <span style="color:#D06F3D;">•</span></h3>
+          <p>A marketplace built for the people behind handmade. Authentic creations direct from India's master artisans.</p>
+          <div style="display: flex; gap: 14px; font-size: 0.9rem; color: #9E988F;">
+            <a href="#">Instagram</a> · <a href="#">Pinterest</a> · <a href="#">YouTube</a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">Explore All</a></li>
+            <li><a href="collection.html">Categories</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+            <li><a href="collection.html">Curated Collections</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Creators</h4>
+          <ul>
+            <li><a href="become-creator.html">Become a Creator</a></li>
+            <li><a href="about.html">Creator Stories</a></li>
+            <li><a href="become-creator.html">How Selling Works</a></li>
+            <li><a href="become-creator.html">Creator Handbook</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="about.html">Contact Us</a></li>
+            <li><a href="become-creator.html">FAQs</a></li>
+            <li><a href="checkout.html">Shipping & Returns</a></li>
+            <li><a href="account.html">Track Order</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Kalamayi</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>© 2026 Kalamayi Crafts. All rights reserved.</div>
+        <div>Made with care · India</div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="pwa-bottom-bar">
+    <a href="index.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="collection.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Collection</span>
+    </a>
+    <a href="shop.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span>Shop</span>
+    </a>
+    <a href="favourite.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <span>Saved</span>
+    </a>
+    <a href="account.html" class="pwa-nav-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Account</span>
+    </a>
+  </nav>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  
+  <div class="side-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3 class="serif">Your Cart</h3>
+      <button class="drawer-close-btn" onclick="closeAllDrawers()">✕</button>
+    </div>
+    <div class="drawer-body" id="cartDrawerItems"></div>
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 16px;">
+        <span>Subtotal</span>
+        <span id="cartDrawerSubtotal">₹0</span>
+      </div>
+      <a href="checkout.html" class="btn btn-accent" style="width: 100%;">Proceed to Checkout →</a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
