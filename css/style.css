@@ -2,7 +2,7 @@
 
 :root {
   --bg-primary: #FAF8F5;
-  --bg-secondary: #F4EFEA;
+  --bg-secondary: #F3EFEA;
   --bg-card: #FFFFFF;
   --bg-dark: #121212;
   --bg-dark-card: #181716;
@@ -44,13 +44,6 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  padding-bottom: 74px;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-bottom: 0;
-  }
 }
 
 a {
@@ -184,7 +177,9 @@ h1, h2, h3, h4 {
   background: #2E2D2B;
 }
 
-/* FLOATING NAVBAR */
+/* ==========================================================================
+   FLOATING DESKTOP NAVBAR vs CLEAN MOBILE TOP HEADER
+   ========================================================================== */
 .header-wrapper {
   position: sticky;
   top: 14px;
@@ -304,7 +299,9 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
 }
 
-/* FIGMA HOME HERO SECTION */
+/* ==========================================================================
+   HERO SECTIONS
+   ========================================================================== */
 .figma-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -358,15 +355,14 @@ h1, h2, h3, h4 {
   letter-spacing: 0.04em;
 }
 
-/* Hero Right Floating Visual Cards */
 .hero-visual-cards {
   position: relative;
   height: 480px;
 }
 
 .hero-visual-main {
-  width: 82%;
-  height: 380px;
+  width: 84%;
+  height: 390px;
   border-radius: var(--card-radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -427,7 +423,7 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 
-/* TICKER */
+/* MARQUEE */
 .ticker-ribbon {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-light);
@@ -576,7 +572,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-/* FIGMA BENTO "WHAT'S BEING MADE" */
+/* FIGMA BENTO */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -621,7 +617,7 @@ h1, h2, h3, h4 {
   height: 380px;
 }
 
-/* CREATOR SPOTLIGHT */
+/* CREATORS */
 .creator-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -655,7 +651,7 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 
-/* STORY SPLIT BANNER */
+/* STORY BANNER */
 .story-highlight-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -679,7 +675,7 @@ h1, h2, h3, h4 {
   justify-content: center;
 }
 
-/* VALUES DARK SECTION */
+/* VALUES */
 .values-dark-section {
   background: #121212;
   color: #FAF8F5;
@@ -766,7 +762,9 @@ h1, h2, h3, h4 {
   color: #7A756D;
 }
 
-/* PWA APP BAR */
+/* ==========================================================================
+   PWA BOTTOM APP BAR & DRAWERS
+   ========================================================================== */
 .pwa-bottom-bar {
   display: none;
   position: fixed;
@@ -834,10 +832,71 @@ h1, h2, h3, h4 {
 .drawer-body { padding: 24px; overflow-y: auto; flex-grow: 1; }
 .drawer-footer { padding: 20px 24px; border-top: 1px solid var(--border-light); background: #FAF8F5; }
 
-/* RESPONSIVE */
+/* FULLSCREEN SEARCH MODAL (FIGMA SCREENSHOT 6) */
+.search-modal {
+  position: fixed;
+  inset: 0;
+  background: #FFFFFF;
+  z-index: 2500;
+  display: none;
+  flex-direction: column;
+  padding: 24px;
+  overflow-y: auto;
+}
+.search-modal.open {
+  display: flex;
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #FAF8F5;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 24px;
+}
+.search-input-box input {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  background: transparent;
+}
+
+/* ==========================================================================
+   MOBILE LAYOUT FIXES (NO DOUBLE NAVBAR)
+   ========================================================================== */
 @media (max-width: 991px) {
-  .nav-links { display: none; }
-  .pwa-bottom-bar { display: flex; }
+  body {
+    padding-bottom: 74px; /* Space for Bottom App Bar */
+  }
+
+  /* Hide Desktop Links and Actions on Mobile */
+  .header-wrapper {
+    top: 0;
+    padding: 10px 14px 0;
+    margin-bottom: 14px;
+  }
+
+  .navbar {
+    border-radius: 16px;
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions .user-pill,
+  .nav-actions .btn-pill-dark {
+    display: none;
+  }
+
+  /* Show Bottom App Bar */
+  .pwa-bottom-bar {
+    display: flex;
+  }
+
   .figma-hero-grid { grid-template-columns: 1fr; }
   .hero-visual-cards { height: 320px; }
   .bento-large, .bento-small { grid-column: span 12; height: 300px; }
@@ -852,4 +911,3 @@ h1, h2, h3, h4 {
   .footer-brand { grid-column: span 1; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
-
